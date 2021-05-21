@@ -57,6 +57,7 @@ export DONT_PROMPT_WSL_INSTALL=1
 
 #### Visual Studio Codeの日本語設定
 
+vscode を起動する。
 ```
 $ code 
 ```
