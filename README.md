@@ -28,7 +28,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 
 ```
 sudo apt update
-sudo apt -y upgrade
+sudo apt upgrade -y
 ```
 
 ### UNVTに必要なライブラリのインストール（１）
