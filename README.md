@@ -1,21 +1,22 @@
-# unvt-on-wsl2
+# UNVT WSL2インストール手順
+Windows10 2004 (x64) 以降のWSL2 Ubuntu 20.04上に United Nations Vector Tile Toolkit (UNVT) 環境を構築する。
 
-## UNVT WSL2インストール手順
 
-### WSL2の準備
-WSL2利用環境が整っているものとする。
-WSL2はUbuntu 20.04 を使用する。
-Microsoft Store からUbuntu 20.04をインストールする。
-Ubunntu20.04が起動したら、ユーザーアカウントとパスワードを設定する。
+WSL2の準備
+---
+* WSL2利用環境が整っているものとする。
+* WSL2はUbuntu 20.04 を使用する。
+* Microsoft Store からUbuntu 20.04をインストールする。
+* Ubunntu20.04が起動したら、ユーザーアカウントとパスワードを設定する。
 
-### aptのリポジトリにgisライブラリの参照を追加する
+#### aptのリポジトリにgisライブラリの参照を追加する
 
 ```
 sudo add-apt-repository ppa:ubuntugis/ppa
 ```
-＊既に追加してある場合は不要
+_＊既に追加してある場合は不要_
 
-### yarn系のリポジトリを設定する
+#### yarn系のリポジトリを設定する
 
 ```
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -75,14 +76,14 @@ VS Codeが再起動され、日本語表示になる。
 sudo npm i -g npm
 ```
 
-＊ WSL2ではxrdpは不要かも
+＊ WSL2ではxrdpは不要かもしれない
 
 ```
 sudo service xrdp restart
 ```
 
-### tippecanoeのインストール
-
+tippecanoeのインストール
+---
 ```
 git clone https://github.com/mapbox/tippecanoe
 cd tippecanoe
@@ -92,7 +93,8 @@ cd ..
 rm -rf tippecanoe
 ```
 
-### vt-optimizerのインストール
+vt-optimizerのインストール
+---
 
 ```
 sudo yarn global add browserify budo hjson pm2 rollup @mapbox/mapbox-gl-style-spec @pushcorn/hocon-parser
@@ -103,7 +105,8 @@ yarn  install
 cd ..
 ```
 
-### fgdのインストール
+fgdのインストール
+---
 tippecanoeのテスト用
 
 ```
@@ -115,10 +118,13 @@ sudo gem install rubyzip
 ```
 
 基盤地図情報からテストデータをダウンロードする
+
 https://fgd.gsi.go.jp/download
 
 ダウンロードしたファイルを展開する。
-＊場所はR/Wできるところであればどこでもよい。
+
+_＊場所はR/Wできるところであればどこでもよい。_
+
 ~/Downloads/PackDLMap　に展開、fgdディレクトリで作業を行う場合
 
 fgd/mbtilesディレクトリを作成する
@@ -142,8 +148,9 @@ rake produce
 
 以下は動作未確認
 テストサイトをホスティングする
+```
 rake lan
 rake host
 rake pages
 cp docs ~/your-pages-repo
-
+```
