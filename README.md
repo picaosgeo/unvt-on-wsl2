@@ -61,12 +61,12 @@ export DONT_PROMPT_WSL_INSTALL=1
 $ code 
 ```
 
-メニューから［View］-［Command Palette］を選択
-［Configure Display Language］を選択
-［Install Additional Laugage］を選択
-サイドバーに拡張言語パックが表示される。
-サイドバーから［Japanese Language Pack for Visual Studio Code］を探し、［Install］ボタンをクリック
-右下にポップアップウィザードが表示されるので、［Restart Now］をクリック
+メニューから［View］-［Command Palette］を選択  
+［Configure Display Language］を選択  
+［Install Additional Laugage］を選択  
+サイドバーに拡張言語パックが表示される。  
+サイドバーから［Japanese Language Pack for Visual Studio Code］を探し、［Install］ボタンをクリック  
+右下にポップアップウィザードが表示されるので、［Restart Now］をクリック  
 VS Codeが再起動され、日本語表示になる。
 
 
@@ -76,7 +76,7 @@ VS Codeが再起動され、日本語表示になる。
 sudo npm i -g npm
 ```
 
-＊ WSL2ではxrdpは不要かもしれない
+_＊ WSL2ではxrdpは不要かもしれない_
 
 ```
 sudo service xrdp restart
@@ -117,19 +117,15 @@ yarn
 sudo gem install rubyzip
 ```
 
-基盤地図情報からテストデータをダウンロードする
-
+基盤地図情報からテストデータをダウンロードする  
 https://fgd.gsi.go.jp/download
 
-ダウンロードしたファイルを展開する。
-
+ダウンロードしたファイルを展開する。  
 _＊場所はR/Wできるところであればどこでもよい。_
 
-~/Downloads/PackDLMap　に展開、fgdディレクトリで作業を行う場合
-
-fgd/mbtilesディレクトリを作成する
-
-fgd/Rakefileを編集する
+~/Downloads/PackDLMap　に展開、fgdディレクトリで作業を行う場合  
+fgd/mbtilesディレクトリを作成する  
+fgd/Rakefileを編集する  
 
 ```:Rakefile
 SRC_DIR = "#{Dir.home}/Downloads/PackDLMap"
@@ -144,11 +140,10 @@ LAN_URL = 'http://localhost:9966'
 rake produce
 ```
 
-正常に終了すると、fgd/docs/にベクトルタイルフォルダができる。
+正常に終了すると、fgd/docs/にベクトルタイルフォルダができる。  
 
-以下は動作未確認
-
-テストサイトをホスティングする
+以下は動作未確認  
+テストサイトをホスティングする  
 ```
 rake lan
 rake host
