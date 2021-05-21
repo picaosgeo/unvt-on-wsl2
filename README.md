@@ -1,21 +1,21 @@
 # unvt-on-wsl2
 
-##UNVT  WSL2インストール手順
+## UNVT WSL2インストール手順
 
-###WSL2の準備
+### WSL2の準備
 WSL2利用環境が整っているものとする。
 WSL2はUbuntu 20.04 を使用する。
 Microsoft Store からUbuntu 20.04をインストールする。
 Ubunntu20.04が起動したら、ユーザーアカウントとパスワードを設定する。
 
-aptのリポジトリにgisライブラリの参照を追加する
+### aptのリポジトリにgisライブラリの参照を追加する
 
 '''
 sudo add-apt-repository ppa:ubuntugis/ppa
 '''
 ＊既に追加してある場合は不要
 
-yarn系のリポジトリを設定する
+### yarn系のリポジトリを設定する
 
 '''
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -30,14 +30,15 @@ sudo apt update
 sudo apt -y upgrade
 '''
 
-###UNVTに必要なライブラリのインストール（１）
+### UNVTに必要なライブラリのインストール（１）
 
 '''
 sudo apt install -y autoconf automake cmake gdal-bin git libsqlite3-dev libtool nginx nodejs osmium-tool parallel ruby sqlite3 tmux vim xrdp yarn zip 
 '''
 
-###UNVTに必要なライブラリのインストール（２）
-VSCodeのインストール
+### UNVTに必要なライブラリのインストール（２）
+
+#### VSCodeのインストール
 https://code.visualstudio.com/ からvscode をダウンロード
 
 '''
@@ -53,7 +54,7 @@ sudo apt -y upgrade  ＊以前にダウンロードされたインストール�
 export DONT_PROMPT_WSL_INSTALL=1
 '''
 
-###Visual Studio Codeの日本語設定
+#### Visual Studio Codeの日本語設定
 
 '''
 $ code 
@@ -68,7 +69,7 @@ $ code
 VS Codeが再起動され、日本語表示になる。
 
 
-###npmのモジュールアップデート
+### npmのモジュールアップデート
 
 '''
 sudo npm i -g npm
@@ -80,7 +81,7 @@ sudo npm i -g npm
 sudo service xrdp restart
 '''
 
-###tippecanoeのインストール
+### tippecanoeのインストール
 
 '''
 git clone https://github.com/mapbox/tippecanoe
@@ -91,7 +92,7 @@ cd ..
 rm -rf tippecanoe
 '''
 
-###vt-optimizerのインストール
+### vt-optimizerのインストール
 
 '''
 sudo yarn global add browserify budo hjson pm2 rollup @mapbox/mapbox-gl-style-spec @pushcorn/hocon-parser
@@ -102,7 +103,7 @@ yarn  install
 cd ..
 '''
 
-###fgdのインストール
+### fgdのインストール
 tippecanoeのテスト用
 
 '''
